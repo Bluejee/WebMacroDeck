@@ -21,34 +21,39 @@ def type_text():
 # Application and Web Navigation Functions
 # ----------------------------------------
 
-def open_app(app_name):
+def open_app():
     """
     Opens an application by name using the Windows Run dialog.
     The function simulates pressing the Win+R keys, types the application name,
     and presses Enter. Useful for quickly opening applications without navigating through menus.
     """
+    app_name = 'Chrome'
     pyautogui.hotkey('win', 'r')
     sleep(1)
     pyautogui.typewrite(app_name)
     sleep(1)
     pyautogui.press('enter')
 
-def open_website(url='www.example.com', browser='firefox'):
+def open_website():
     """
     Opens a website in a specified browser using the Windows Run dialog.
     This function can be customized to open websites in different browsers by specifying
     the browser's command.
     """
+    url='www.example.com'
+    browser='firefox'
+
     pyautogui.hotkey('win', 'r')
     sleep(1)
     pyautogui.typewrite(browser + ' ' + url + '\n')
 
-def open_workspace(folder_path):
+def open_workspace():
     """
     Opens a specified folder in Windows Explorer, PyCharm, and Visual Studio Code.
     This function is useful for setting up a workspace with a single command, allowing you to
     quickly start working on a project across multiple applications.
     """
+    folder_path = 'C:\Users\Username\Documents' # Change it to work correctly
     # Open the folder in Windows Explorer
     subprocess.Popen(f'explorer "{folder_path}"')
 
