@@ -40,7 +40,7 @@ def open_website():
     This function can be customized to open websites in different browsers by specifying
     the browser's command.
     """
-    url='www.example.com'
+    url='www.bluejee.com'
     browser='firefox'
 
     pyautogui.hotkey('win', 'r')
@@ -53,7 +53,7 @@ def open_workspace():
     This function is useful for setting up a workspace with a single command, allowing you to
     quickly start working on a project across multiple applications.
     """
-    folder_path = 'C:\Users\Username\Documents' # Change it to work correctly
+    folder_path = r'C:\Users\Username\Documents' # Change it to work correctly
     # Open the folder in Windows Explorer
     subprocess.Popen(f'explorer "{folder_path}"')
 

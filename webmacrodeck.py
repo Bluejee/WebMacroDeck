@@ -5,9 +5,17 @@ app = Flask(__name__)
 
 # Define a mapping of action names to functions
 action_map = {
-    'login_163': actions.login_163,
-    'login_197': actions.login_197,
-    # Add other actions here as needed
+    'type_text': actions.type_text,
+    'open_app': actions.open_app,
+    'open_website': actions.open_website,
+    'open_workspace': actions.open_workspace,
+    'volume_up': actions.volume_up,
+    'volume_down': actions.volume_down,
+    'mute_unmute': actions.mute_unmute,
+    'copy': actions.copy,
+    'cut': actions.cut,
+    'paste': actions.paste,
+    # Add other functions from the actions file as needed
 }
 
 
