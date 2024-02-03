@@ -1,7 +1,5 @@
-<!-- Changes to be made in the line below -->
-<!-- Thank you for contributing to <**Project**>! -->
-<!-- Changes to be made in the line below -->
-<!-- Learn more about the process in the contributing guidelines: https://github.com/Bluejee/<**Project**>/blob/main/CONTRIBUTING.md -->
+<!-- Thank you for contributing to WebMacroDeck! -->
+<!-- Learn more about the process in the contributing guidelines: https://github.com/Bluejee/WebMacroDeck/blob/main/CONTRIBUTING.md -->
 
 ## Overview: What does this pull request change?
 <!-- Please make sure to cite the Issue you are referring to.-->

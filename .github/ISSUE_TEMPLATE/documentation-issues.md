@@ -6,8 +6,7 @@ labels: documentation
 assignees: ''
 
 ---
-<!-- Changes to be made in the line below -->
-Please view the [Contributing Guidelines](https://github.com/Bluejee/<**Project**>/blob/main/CONTRIBUTING.md) for information on Contributing.
+Please view the [Contributing Guidelines](https://github.com/Bluejee/WebMacroDeck/blob/main/CONTRIBUTING.md) for information on Contributing.
 
 # Type of Issue
 <!-- What is the Issue, is there some mistake in the documentation, or is the documentation you are looking for non existent.-->

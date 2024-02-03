@@ -1,7 +1,6 @@
-     <!--ADD PROJECT NAME AND BRIEF DISCRIPTION REPLACING THIS LINE-->
+  WebMacroDeck - A Webserver based implementation to emulate a Macro Keyboard
 
-<!-- Changes to be made in the line below : Change the Year --> 
-Copyright (C) <YEAR>  Balakrishna Prabhu B. N. <balakrishnaprabhu1999@gmail.com>
+Copyright (C) 2024  Balakrishna Prabhu B. N. <balakrishnaprabhu1999@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

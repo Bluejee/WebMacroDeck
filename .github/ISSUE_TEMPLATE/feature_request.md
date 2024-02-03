@@ -7,8 +7,7 @@ assignees: ''
 
 ---
 
-<!-- Changes to be made in the line below -->
-Please view the [Contributing Guidelines](https://github.com/Bluejee/<**Project**>/blob/main/CONTRIBUTING.md) for information on Contributing.
+Please view the [Contributing Guidelines](https://github.com/Bluejee/WebMacroDeck/blob/main/CONTRIBUTING.md) for information on Contributing.
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when […]
