@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStreamDeck</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function triggerAction(action) {
+            if(action === 'dummy') return; // Do nothing for dummy buttons
+            // Use the Fetch API to send a GET request with the action as a query parameter
+            fetch('/trigger?action=' + action)
+                .then(() => console.log(action + ' triggered'))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <div id="button-container">
+        {% for action in actions %}
+            <button class="action-button" onclick="triggerAction('{{ action }}')">{{ action }}</button>
+        {% endfor %}
+        {% set total_actions = actions|length %}
+        {% set dummy_count = 32 - total_actions %}
+        {% for _ in range(dummy_count) %}
+            <button class="action-button" onclick="triggerAction('dummy')"></button>
+        {% endfor %}
+    </div>
+</body>
+</html>
