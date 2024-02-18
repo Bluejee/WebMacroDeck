@@ -3,26 +3,34 @@ import actions
 
 app = Flask(__name__)
 
-# Define a mapping of action names to functions
+# Define a mapping of action names to functions, colors and respective positions
 action_map = {
-    'type_text': actions.type_text,
-    'open_app': actions.open_app,
-    'open_website': actions.open_website,
-    'open_workspace': actions.open_workspace,
-    'volume_up': actions.volume_up,
-    'volume_down': actions.volume_down,
-    'mute_unmute': actions.mute_unmute,
-    'copy': actions.copy,
-    'cut': actions.cut,
-    'paste': actions.paste,
-    # Add other functions from the actions file as needed
+    'type_text': [actions.type_text, 'green', 1],
+    'open_app': [actions.open_app, 'blue', 5],
+    'open_website': [actions.open_website, 'orange', 6],
+    'open_workspace': [actions.open_workspace, 'light_blue', 7],
+    'volume_up': [actions.volume_up, 'red', 16],
+    'volume_down': [actions.volume_down, 'purple', 20],
+    'mute_unmute': [actions.mute_unmute, 'pink', 24],
+    'copy': [actions.copy, 'brown', 17],
+    'cut': [actions.cut, 'gray', 13],
+    'paste': [actions.paste, 'cyan', 21],
+    # Add other functions from the actions file with colors and positions as needed
 }
 
+# Creating a list for holding the positions of dummy icons. This is passed to the template to index the dummy icons.
+dummy_list = [i for i in range (1,33)]
+# Remove positions used by actual icons from the dummy list
+for key,value in action_map.items():
+    if value[2] in dummy_list:
+        dummy_list.remove(value[2])
+        
 
 @app.route('/')
 def index():
-    # Pass the keys of action_map to the template for GET requests
-    return render_template('index.html', actions=list(action_map.keys()))
+    # Pass the keys of action_map along with their color and position to the template for GET requests
+    action_tp = [{'name': action_key, 'color': action_data[1], 'position': action_data[2]} for action_key, action_data in action_map.items()]
+    return render_template('index.html', actions = action_tp, dummy_list = dummy_list)
 
 
 @app.route('/trigger')
@@ -32,7 +40,7 @@ def trigger_action():
         # If the action is not found in the map, return an error
         abort(404, description="Action not found")
 
-    action_func = action_map[action_key]
+    action_func = action_map[action_key][0]
     try:
         action_func()  # Execute the corresponding action function
         # You might want to log the action or handle errors as needed
