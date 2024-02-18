@@ -20,6 +20,7 @@ action_map = {
 
 # Creating a list for holding the positions of dummy icons. This is passed to the template to index the dummy icons.
 dummy_list = [i for i in range (1,33)]
+# Remove positions used by actual icons from the dummy list
 for key,value in action_map.items():
     if value[2] in dummy_list:
         dummy_list.remove(value[2])
@@ -29,7 +30,7 @@ for key,value in action_map.items():
 def index():
     # Pass the keys of action_map along with their color and position to the template for GET requests
     action_tp = [{'name': action_key, 'color': action_data[1], 'position': action_data[2]} for action_key, action_data in action_map.items()]
-    return render_template('index.html', actions=action_tp, ilist = dummy_list)
+    return render_template('index.html', actions = action_tp, dummy_list = dummy_list)
 
 
 @app.route('/trigger')

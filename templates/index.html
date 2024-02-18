@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebStreamDeck</title>
+     <!-- Link to the CSS stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script>
+        // Function to trigger an action when a button is clicked
         function triggerAction(action) {
-            if (action === 'dummy') return; // Do nothing for dummy buttons
+            if(action === 'dummy') return; // Do nothing for dummy buttons
             // Use the Fetch API to send a GET request with the action as a query parameter
             fetch('/trigger?action=' + action)
                 .then(() => console.log(action + ' triggered'))
@@ -16,12 +18,14 @@
     </script>
 </head>
 <body>
+    <!-- Container for action buttons -->
     <div id="button-container">
-        {% for action in actions %}
+        <!-- Loop through the list of actions to create action buttons -->
+        {% for action in actions %} 
             <button class="action-button" onclick="triggerAction('{{ action.name }}')" style="background-color: {{ action.color }}; color: white; order: {{ action.position }};">{{ action.name }}</button> 
         {% endfor %}
-        {% set total_actions = actions|length %}
-        {% for dummy in ilist %}
+        <!-- Loop through the dummy_list to create dummy buttons -->
+        {% for dummy in dummy_list %}
             <button class="action-button" onclick="triggerAction('dummy')" style="order:{{dummy}};">{{dummy}}</button>
         {% endfor %}
     </div>
